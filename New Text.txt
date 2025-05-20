@@ -1,0 +1,11 @@
+//For Removing 3 zeros from registration row
+
+UPDATE tblstudents
+SET reg = SUBSTRING(reg, 4)
+WHERE reg LIKE '0000%';
+
+
+//For Adung 1 zero in registration row
+UPDATE tblstudents
+SET reg = CONCAT('0', reg)
+WHERE SUBSTRING(reg, 1, 1) <> '0';
